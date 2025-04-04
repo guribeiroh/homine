@@ -12,7 +12,6 @@ interface PlanCardProps {
   description: string;
   features: PlanFeature[];
   isPopular?: boolean;
-  period: 'month';
 }
 
 export default function PlanCard({
@@ -22,7 +21,6 @@ export default function PlanCard({
   description,
   features,
   isPopular = false,
-  period,
 }: PlanCardProps) {
   return (
     <div

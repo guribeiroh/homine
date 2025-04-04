@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 interface CreditCardProps {
   cardNumber: string;
@@ -26,17 +25,6 @@ export default function CreditCard({
     const formatted = number.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim();
     return formatted || '•••• •••• •••• ••••';
   };
-
-  // Mapeamento de logos de bandeiras de cartão
-  const brandLogo: Record<string, string> = {
-    visa: '/visa-logo.svg',
-    mastercard: '/mastercard-logo.svg',
-    amex: '/amex-logo.svg',
-    discover: '/discover-logo.svg',
-    unknown: '/card-chip.svg',
-  };
-
-  const logo = brandLogo[cardBrand] || brandLogo.unknown;
 
   return (
     <div className="perspective-1000 w-full max-w-[420px] h-[240px] mx-auto my-5">

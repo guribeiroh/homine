@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { getStripe } from '@/lib/stripe';
 import { Plan } from '@/lib/plans';
@@ -12,8 +11,6 @@ interface CheckoutClientProps {
 }
 
 export default function CheckoutClient({ plan }: CheckoutClientProps) {
-  const [clientSecret, setClientSecret] = useState<string | null>(null);
-  
   // Convertendo o plano para o formato esperado pelo componente de resumo
   const planSummary = {
     id: plan.id,

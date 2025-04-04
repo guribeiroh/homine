@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description: 'Finalize sua assinatura premium na HOMINE e comece a transformar seu visual hoje mesmo.',
 };
 
-type PageProps = {
+type Props = {
   params: Record<string, string>;
   searchParams: Record<string, string | string[] | undefined>;
 };
 
-export default function CheckoutPage({ searchParams }: PageProps) {
+export default function CheckoutPage({ searchParams }: Props) {
   const planId = searchParams.plan as string;
   
   // Se não houver um plano selecionado, redirecionar para a página de planos

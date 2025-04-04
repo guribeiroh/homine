@@ -122,7 +122,7 @@ export default function PlansPage() {
                   <div className="flex flex-col items-center text-center">
                     <div className="h-16 w-16 rounded-full bg-gray-800 mb-4"></div>
                     <p className="text-sm text-gray-300 mb-3">
-                      "Melhor investimento que fiz no meu visual. Atendimento impecável e resultado incrível."
+                      &quot;Melhor investimento que fiz no meu visual. Atendimento impecável e resultado incrível.&quot;
                     </p>
                     <p className="text-sm font-medium">Rafael S.</p>
                   </div>
@@ -130,7 +130,7 @@ export default function PlansPage() {
                   <div className="flex flex-col items-center text-center">
                     <div className="h-16 w-16 rounded-full bg-gray-800 mb-4"></div>
                     <p className="text-sm text-gray-300 mb-3">
-                      "A conveniência da assinatura e a qualidade do serviço fazem valer cada centavo."
+                      &quot;A conveniência da assinatura e a qualidade do serviço fazem valer cada centavo.&quot;
                     </p>
                     <p className="text-sm font-medium">Marcelo T.</p>
                   </div>
@@ -138,7 +138,7 @@ export default function PlansPage() {
                   <div className="flex flex-col items-center text-center">
                     <div className="h-16 w-16 rounded-full bg-gray-800 mb-4"></div>
                     <p className="text-sm text-gray-300 mb-3">
-                      "Economizo tempo e dinheiro com o plano premium. Recomendo a todos."
+                      &quot;Economizo tempo e dinheiro com o plano premium. Recomendo a todos.&quot;
                     </p>
                     <p className="text-sm font-medium">André L.</p>
                   </div>

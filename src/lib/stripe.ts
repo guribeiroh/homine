@@ -13,7 +13,7 @@ export const getStripe = () => {
   return stripePromise;
 };
 
-export async function createCheckoutSession(planId: string, customerEmail: string) {
+export async function createCheckoutSession(planId: string) {
   try {
     // Simula uma chamada à API para criar uma sessão de checkout
     // Normalmente, você chamaria seu backend para criar a sessão de checkout

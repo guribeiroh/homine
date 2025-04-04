@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 
 interface PaymentSuccessProps {
   onAnimationComplete: () => void;
@@ -7,7 +7,7 @@ interface PaymentSuccessProps {
 export default function PaymentSuccess({ onAnimationComplete }: PaymentSuccessProps) {
   const [currentStep, setCurrentStep] = useState(0);
   
-  const messages = [
+  const messages = useMemo(() => [
     { 
       text: "Preparando as lâminas...", 
       icon: (
@@ -51,7 +51,7 @@ export default function PaymentSuccess({ onAnimationComplete }: PaymentSuccessPr
       ), 
       delay: 1200 
     }
-  ];
+  ], []);
   
   useEffect(() => {
     if (currentStep < messages.length) {
@@ -69,7 +69,7 @@ export default function PaymentSuccess({ onAnimationComplete }: PaymentSuccessPr
       
       return () => clearTimeout(finalTimer);
     }
-  }, [currentStep, onAnimationComplete]);
+  }, [currentStep, onAnimationComplete, messages]);
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50">
@@ -129,9 +129,7 @@ export default function PaymentSuccess({ onAnimationComplete }: PaymentSuccessPr
                     index <= currentStep ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    {message.icon}
-                  </div>
+                  <span className="text-2xl">{message.icon}</span>
                   <span className="text-lg text-gray-300">{message.text}</span>
                 </div>
               ))}

@@ -23,7 +23,6 @@ export default function CheckoutForm({ planDetails }: CheckoutFormProps) {
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [clientSecret, setClientSecret] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -97,8 +96,14 @@ export default function CheckoutForm({ planDetails }: CheckoutFormProps) {
   };
 
   // Função para lidar com os dados do cartão vindos do CardElement
-  const handleCardChange = (event: any) => {
-    const { empty, complete, error, brand, value } = event;
+  const handleCardChange = (event: {
+    empty: boolean;
+    complete: boolean;
+    error: { message: string } | undefined;
+    brand: string;
+    value: unknown;
+  }) => {
+    const { empty, complete, error, brand } = event;
     
     if (error) {
       setError(error.message);
